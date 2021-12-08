@@ -6,21 +6,12 @@ Created on Sat Nov 20 18:51:54 2021
 """
 
 import pandas as pd
-import re
-import operator
 from tqdm import tqdm
 from sklearn.feature_extraction.text import CountVectorizer
-import numpy as np
 import nltk
 from nltk.corpus import stopwords
-import string
-from sklearn.feature_extraction.text import CountVectorizer
-from imblearn.over_sampling import SMOTE
-from sklearn.preprocessing import LabelEncoder
 from sklearn import svm
-from sklearn import metrics
-
-from joblib import dump, load
+from joblib import dump
 
 data = pd.read_xml("train_fine.xml")
 data['note'] = data['note'].str.replace(',','.').astype(float)
